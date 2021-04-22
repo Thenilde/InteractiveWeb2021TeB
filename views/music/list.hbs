@@ -1,0 +1,29 @@
+<h3 class="bnt btn-secondary" href="/music"><i class="fa fa-plus"></i>
+Create New</a>Music List</h3>
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>Intrument</th>
+          <th>Price</th>
+          <th>Color</th>
+          <th>Year</th>
+          <th>Comments</th>
+      </tr>
+  </thead>
+  <tbody>
+      {{#each list}}
+      <tr>
+          <td>{{this.instrument}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.color}}</td>
+          <td>{{this.year}}</td>
+          <td>{{this.comments}}</td>
+
+          <td>
+             <a href="/music/{{this._id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+             <a href="/music/delete{{this._id}}" onclick="return confirm|('Are you want to delete this record?');"><i class="fa fa-trash" aria-hidden="true"></i></a>
+          </td>
+      </tr>
+       {{/each}}
+  </tbody>
+</table>
